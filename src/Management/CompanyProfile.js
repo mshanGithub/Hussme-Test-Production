@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useUser } from "../Components/Context/UserContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../Management/CompanyProfile.css";
 
 export function CompanyProfile() {
-  const { user, logout } = useUser();
   const navigate = useNavigate();
   const [showLogout, setShowLogout] = useState(false);
   const [companyProfile, setCompanyProfile] = useState(null);
@@ -43,22 +41,8 @@ export function CompanyProfile() {
 
   const [formErrors, setFormErrors] = useState({});
 
-  // Function to toggle the logout dropdown
-  const toggleLogout = () => setShowLogout(!showLogout);
 
-  // Function to handle logout
-  const handleLogout = (e) => {
-    e.preventDefault();
-    logout();
-    setShowLogout(false);
-  };
-
-  // Function to navigate to change password page
-  const handleChangePassword = (e) => {
-    e.preventDefault();
-    setShowLogout(false);
-    navigate("/reset-password");
-  };
+ 
 
   // Fetch company profile data
   useEffect(() => {
@@ -256,7 +240,6 @@ export function CompanyProfile() {
   const toggleEditMode = () => {
     setEditMode(!editMode);
     // Reset any form errors when toggling edit mode
-    setFormErrors({});
   };
 
   // Helper function to get proper image URL

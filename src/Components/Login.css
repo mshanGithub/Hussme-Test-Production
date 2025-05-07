@@ -1,0 +1,470 @@
+.login-page {
+  margin-top: 70px;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://i.ibb.co/LDYsk9vQ/juyt-6.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-container {
+  position: relative;
+  height: 550px;
+  width: 850px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  overflow: hidden;
+  display: flex;
+}
+
+.form-box {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: center;
+  color: black;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+  transition: 0.6s ease-in-out 1.2s;
+}
+
+.login-container.active .form-box {
+  right: 50%;
+}
+
+.form-box.signup {
+  transition: 0s;
+  visibility: hidden;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  height: auto; /* Allow height to adjust based on content */
+  max-height: 100%; /* Prevent exceeding container height */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.form-box.signup::-webkit-scrollbar {
+  display: none;
+}
+
+.login-container.active .form-box.signup {
+  visibility: visible;
+  transition: 1.2s;
+}
+
+.login-container.active .form-box.login {
+  visibility: hidden;
+  transition: 0s;
+}
+
+form {
+  width: 100%;
+  padding: 30px;
+}
+
+.login-container h1 {
+  font-size: 36px;
+  margin: -10px 0;
+     font-family: "Kumbh Sans", sans-serif !important;
+}
+
+.forgot-link a {
+  font-weight: 500 !important;
+  font-size: 17px !important;
+}
+
+.input-box {
+  position: relative;
+  margin: 30px 0;
+}
+
+.input-box input {
+  min-width: 80%;
+  padding: 13px 50px 13px 13px;
+  background-color: rgb(226, 226, 226);
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.input-box input::placeholder {
+  font-weight: 300;
+  color: #888;
+}
+
+.input-box i {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #888;
+}
+
+.forgot-link {
+  margin: -15px 0 15px;
+}
+
+.forgot-link a {
+  text-decoration: none;
+  font-size: 14.5px;
+  color: #333;
+}
+
+.login-btn,
+.signup-btn {
+  width: 45%;
+  height: 48px;
+  text-align: center;
+  font-size: larger;
+  font-weight: 450;
+  color: white;
+  background-color: #4275ce;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #fff;
+  -webkit-clip-path: polygon(
+    0 0,
+    0 0,
+    100% 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    15px 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    0 0,
+    100% 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    15px 100%,
+    0 100%
+  );
+  line-height: 14px;
+  letter-spacing: 1.2px;
+  transition: 0.2s 0.1s;
+  /* background-image: linear-gradient(90deg, #020202b8, #9747ff); */
+  background-image: linear-gradient(to bottom left, #f08243df, #9747ffdf);
+  border: 0 solid;
+  overflow: hidden;
+}
+
+.signup-btn {
+  background-image: linear-gradient(to bottom right, #f08143, #9747ff);
+}
+
+.login-btn:hover {
+  /* width: 52%; */
+  /* scale: 1.05; */
+  background-image: linear-gradient(to bottom left, #f08143, #9747ff);
+  transition: all 0.3s ease-in;
+}
+
+.toggle-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.toggle-box p {
+  font-weight: 500 !important;
+  font-size: 17px !important;
+}
+
+.toggle-box::before {
+  content: " ";
+  position: absolute;
+  width: 300%;
+  left: -250%;
+  background-color: yellowgreen;
+  background-image: linear-gradient(to bottom right, #f08143, #9747ff);
+  height: 100%;
+  z-index: 2;
+  border-radius: 80px;
+  transition: 1.8s ease-in-out;
+}
+
+.login-container.active .toggle-box::before {
+  left: 50%;
+}
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+  transition: 0.6s ease-in-out;
+}
+
+.toggle-panel.toggle-left {
+  left: 0;
+  transition-delay: 1.2s;
+}
+
+.login-container.active .toggle-panel.toggle-left {
+  left: -50%;
+  transition-delay: 0.6s;
+}
+
+.toggle-panel.toggle-right {
+  right: -50%;
+  transition-delay: 0.6s;
+}
+
+.login-container.active .toggle-panel.toggle-right {
+  right: 0;
+  transition-delay: 1.2s;
+}
+
+.toggle-panel p {
+  margin-bottom: 20px;
+}
+
+.toggle-signup-btn,
+.toggle-login-btn {
+  padding: 0;
+  min-height: 46px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: x-large;
+  font-weight: 500;
+     font-family: "Kumbh Sans", sans-serif !important;
+  border-radius: 10px;
+  border: 2px solid white;
+  box-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* Password Requirements Styles */
+.password-requirements {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 10px 0 20px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.password-requirements p {
+  margin: 0 0 8px;
+  font-weight: 450;
+  color: #444;
+}
+
+.password-requirements ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Two items per row */
+  gap: 0px;
+}
+
+.password-requirements li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+}
+
+.password-requirements li i {
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+.password-requirements .valid {
+  color: #28a745;
+}
+
+.password-requirements .invalid {
+  color: #dc3545;
+}
+
+.signup-btn.disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Password match error message */
+.password-error {
+  margin-top: -15px;
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.password-error p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #dc3545;
+}
+
+/* Adjust container height when password requirements are shown */
+.login-container.active {
+  transition: height 0.3s ease;
+}
+
+/* Apply specific height when password field is focused in active signup form */
+.login-container.active.password-focused {
+  height: auto;
+  min-height: 650px; /* Increased minimum height to accommodate password requirements */
+}
+
+@media screen and (max-width: 700px) {
+  @media screen and (max-width: 700px) {
+    .password-requirements ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Two items per row */
+      gap: 0px;
+    }
+
+    .password-requirements li {
+      margin-bottom: 4px;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      text-align: left;
+    }
+
+    .password-requirements li i {
+      font-size: 0.9rem;
+      min-width: fit-content;
+      margin-right: 3px !important;
+    }
+  }
+
+  .login-page {
+    min-height: 100vh;
+    align-items: flex-start !important;
+    background-size: contain !important;
+  }
+
+  .login-container {
+    min-height: 500px !important;
+    width: 100% !important;
+    margin-top: 0px !important;
+    background-color: #ffffff00;
+    box-shadow: rgba(136, 165, 191, 0.48) 0px 0px 0px 0px,
+      rgba(255, 255, 255, 0.8) 0px 0px 0px 0px;
+  }
+  .signup {
+    border-radius: 10px;
+  }
+  .signup form {
+    padding: 30px 30px 10px 30px;
+  }
+  .signup .input-box {
+    margin: 10px 0px;
+  }
+  .login-container {
+    top: 3vw;
+  }
+
+  .login-container {
+    min-height: 40vh;
+    width: 90%;
+    border-radius: 10px;
+  }
+
+  /* Adjust height for mobile when password is focused */
+  .login-container.active.password-focused {
+    min-height: 700px;
+  }
+
+  .form-box {
+    width: 100%;
+    height: fit-content;
+    bottom: 0;
+  }
+
+  .form-box.signup {
+    min-height: fit-content;
+    max-height: none; /* Allow full expansion on mobile */
+  }
+
+  .toggle-box::before {
+    left: 0;
+    top: -260%;
+    width: 100%;
+    height: 300%;
+    border-radius: 15vw;
+  }
+
+  .login-container.active .form-box {
+    right: 0;
+    bottom: 30%;
+  }
+
+  .login-container.active .toggle-box::before {
+    left: 0;
+    top: 70%;
+  }
+
+  .toggle-panel {
+    width: 100%;
+    height: 30%;
+  }
+
+  .toggle-panel.toggle-left {
+    top: 5%;
+  }
+
+  .toggle-panel.toggle-right {
+    right: 0;
+    bottom: -30%;
+  }
+
+  .login-container.active .toggle-panel.toggle-left {
+    left: 0;
+    top: -30%;
+  }
+
+  .login-container.active .toggle-panel.toggle-right {
+    bottom: 0;
+  }
+
+  .toggle-panel p {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .password-requirements {
+    margin: 5px;
+  }
+}

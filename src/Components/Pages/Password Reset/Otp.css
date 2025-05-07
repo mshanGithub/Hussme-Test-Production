@@ -1,0 +1,224 @@
+.otp-page {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-image: url('https://i.ibb.co/Fk2MMqFj/46755.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.otp-input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: fit-content;
+}
+.otp-icn {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
+  background-image: url("https://i.ibb.co/6JfW72gR/key.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.otp-text {
+  font-size: x-large;
+  font-weight: 450;
+  margin-bottom: 20px;
+}
+.otp-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0px;
+}
+.otp-input {
+  gap: 10px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.otp-input input {
+  margin: 0px 10px;
+  padding: 20px;
+  border: 2.5px solid #c8c8c8;
+  border-radius: 10px;
+}
+.otp-input input:focus {
+  outline: none;
+  border: 2.5px solid #9747ff;
+}
+.otp-reset-button {
+  margin-top: 30px;
+  width: 50%;
+  height: 50px;
+  color: azure;
+  border-radius: 5px;
+  border-width: 0px;
+  font-size: x-large;
+  font-weight: 450;
+  background-color: #9747ff;
+}
+
+/* new password */
+.new-pass-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: fit-content;
+}
+.new-pass-icn{
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+    background-image: url("https://i.ibb.co/jPsvyFJV/reset.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.new-pass-text{
+    font-size: x-large;
+    font-weight: 450;
+    margin-bottom: 20px;
+}
+.new-pass-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0px;
+}
+.new-pass-form label{
+    font-size: larger;
+    width: 100%;
+    text-align: left;
+    font-weight: 450;
+}
+.new-pass-form input{
+    width: 100%;
+    height: 40px;
+    margin: 10px 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 5px;
+    font-size: 16px;
+}
+.new-pass-form input:focus{
+    outline: none;
+    border: 2px solid #9747ff;
+}
+.new-pass-button{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border-width: 0px;
+    font-size: larger;
+    font-weight: 450;
+    background-color: #9747ff;
+    color: azure;
+    margin-top: 20px;
+}
+
+/* Email suggestions in Reset Password */
+.reset-input-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.email-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  margin-top: 5px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.email-suggestions::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.email-suggestion-item {
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.email-suggestion-item:hover {
+  background-color: #f0f0f0;
+  color: #051e54;
+}
+
+.invalid-input {
+  border: 1px solid #dc3545 !important;
+}
+/* Password Requirements Styles */
+.reset-password-requirements {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 10px 0 20px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.reset-password-requirements p {
+  margin: 0 0 8px;
+  font-weight: 450;
+  color: #444;
+}
+
+.reset-password-requirements ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Two items per row */
+  gap: 0px;
+}
+
+.reset-password-requirements li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+ 
+}
+
+.reset-password-requirements li i {
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+.reset-password-requirements .valid {
+  color: #28a745;
+}
+
+.reset-password-requirements .invalid {
+  color: #dc3545;
+}

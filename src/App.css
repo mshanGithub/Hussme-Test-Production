@@ -1,0 +1,19 @@
+.container {
+  text-align: center;
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  margin: -8px -8px;
+  padding: 0;
+  flex-direction: column;
+}
+a{
+  color:white;
+  text-decoration: none;
+}
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}

@@ -1,0 +1,1117 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 68px;
+  height: 68px;
+  color: #5f4d4d;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #ff3d00;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
+
+.management-page {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 100% !important;
+  font-size: xx-large;
+  font-family: "Kumbh Sans", sans-serif !important;
+  box-shadow: rgba(50, 50, 93, 0) 15px 1px 15px -0px,
+    rgba(0, 0, 0, 0.3) 15px 0px 10px -1px;
+}
+
+.content-management-page {
+  width: 100%;
+  max-height: 100% !important;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task-row {
+  min-height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.task-title-and-new-task {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+.task-title {
+  width: fit-content;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0 0 25px;
+  text-align: left;
+  font-size: larger;
+  font-weight: 550;
+}
+.new-task-button {
+  position: relative;
+  right: 10%;
+  padding: 0px 20px;
+  width: fit-content;
+  height: 50px;
+  background-image: linear-gradient(
+    to top right,
+    #ff7b3eea 30%,
+    #b82de6ea 80%
+  ); /* You can customize the gradient colors */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 500;
+  border-width: 2px;
+  border-color: #dfdfdf;
+  border-style: solid;
+}
+.task-title-and-new-task .new-task-button:hover {
+  background-image: linear-gradient(to top right, #ff7b3e 30%, #b82de6 80%);
+}
+
+.task-boxes {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+}
+.approved-list-container {
+  position: relative;
+  right: 25px;
+  width: fit-content;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.approved-list-btn {
+  height: 100px;
+  width: 250px;
+  background-color: #a10cd3;
+}
+.approved-list-container .tooltiptext {
+  visibility: hidden;
+  width: 16ch;
+  background-color: rgba(0, 0, 0, 0.253);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 15%;
+  right: 110%;
+}
+.approved-list-container:hover .tooltiptext {
+  visibility: visible;
+}
+/* Start of Assign new task  */
+.assign-new-task {
+  width: 80%;
+  height: 70vh;
+  background-image: linear-gradient(
+    to top right,
+    #ff7b3ea9 30%,
+    #b82de6a9 80%
+  ); /* You can customize the gradient colors */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: #d4d4d4;
+  border-style: solid;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 0 25px;
+  margin: 26px 0px 0.5px 0px;
+}
+
+.assign-new-task-row {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+  height: 10%;
+}
+.new-task-form-title {
+  width: 100%;
+  height: 100%;
+  color: white;
+  position: relative;
+  top: -25px;
+  font-size: xx-large;
+  font-weight: 450;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}
+.cross-symbol {
+  position: relative;
+  top: -40px;
+  right: -0px;
+  max-height: 30px;
+  object-fit: contain;
+  padding: 3px 8px;
+}
+.cross-symbol:hover {
+  border-radius: 5px;
+  transition: all 0.1s ease-in-out;
+  background-color: #f9f9f9ab;
+  cursor: pointer;
+}
+.new-task-form {
+  height: 70%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  font-size: large;
+}
+.new-task-row {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.new-task-row-input {
+  width: 100%;
+  max-height: fit-content;
+}
+.new-task-row-input label {
+  font-size: large !important;
+}
+.task-row-2 {
+  justify-content: space-between;
+  height: 85%;
+  padding-left: 25px;
+  width: 30%;
+}
+.new-task-row-submit {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.new-task-input-box {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.new-task-input-box label {
+  text-align: left;
+}
+.new-task-title {
+  border: 2px solid #b81eff;
+  width: 100%;
+  height: 50px;
+  font-family: "Kumbh Sans", sans-serif !important;
+  font-size: large;
+  font-weight: 500;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.new-task-title:focus {
+  border: 2px solid #c46ded;
+  outline: none;
+}
+.new-task-des {
+  border: 2px solid #b81eff;
+  width: 100%;
+  min-height: 220px;
+  font-family: "Kumbh Sans", sans-serif !important;
+  font-size: medium;
+
+  font-weight: 500;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  overflow: hidden;
+}
+.new-task-des:focus {
+  border: 2px solid #c46ded;
+  outline: none;
+}
+.new-task-date-label {
+  font-size: large;
+}
+.new-task-date {
+  width: 200px;
+  font-family: "Kumbh Sans", sans-serif !important;
+  font-size: large;
+  font-weight: 500;
+  padding: 5px 10px;
+  border: 2px solid #b81eff;
+  border-radius: 4px;
+  color: #686868;
+}
+.new-task-date:focus {
+  border: 2px solid #c46ded;
+  outline: none;
+}
+.new-task-row-submit-btn {
+  padding: 0px 20px;
+  min-width: 13ch;
+  height: 50px;
+  background-color: #9747ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 500;
+  border-width: 1px;
+  border-color: #bc50c6;
+  border-style: solid;
+}
+.new-task-row-submit-btn:hover {
+  background-color: #b344d8;
+}
+
+/* End of Assign new task  */
+/* Start of Temp Row */
+.temp-row-container {
+  min-width: 94%;
+  min-height: 270px;
+  /* background-image: url('');  */
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  border-radius: 15px;
+  display: flex;
+  /* justify-content: right; */
+  align-items: center;
+}
+.tsk {
+  background-image: url("https://i.ibb.co/spYHqsSB/632.png");
+}
+.yet {
+  background-image: url("https://i.ibb.co/BVY3ptHC/555.png");
+  justify-content: right;
+}
+.temp-title {
+  font-weight: 550;
+  width: 60%;
+  font-size: xx-large;
+  color: #ffff;
+}
+/* End of Temp Row */
+/* Start of Task Row Container */
+.task-arrows {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-family: "Kumbh Sans", sans-serif !important;
+  cursor: pointer;
+}
+
+.assign-task-btn {
+  min-width: 20px;
+  height: 50px;
+  cursor: pointer;
+}
+.task-row-container {
+  max-width: 93%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+.task-row-container::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.box {
+  min-width: fit-content;
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 20px;
+  padding: 20px;
+  flex: none;
+  transition: all 0.3s ease-in-out;
+}
+.box:hover {
+  scale: 1.05;
+  transition: all 0.3s ease-in-out;
+}
+.cart-task-box-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.45) 10px 10px 15px -10px;
+}
+.cart-task-box {
+  position: relative;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+  clip-path: polygon(
+    30px 0%,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 0px) 100%,
+    0 100%,
+    0% 30px
+  );
+  background-image: url("https://i.ibb.co/LdCpxmGQ/output-onlinepngtools-1-b.png");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  background-color: #ffffff00;
+  transition: all 0.5s ease-in-out;
+  min-width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cart-task-box:hover {
+  background-image: url("https://i.ibb.co/4nYbvHCd/output-onlinepngtools-1.png");
+  transition: all 0.3s ease-in-out;
+}
+.top-id-card {
+  width: 100%;
+  height: 15%;
+  background-color: rgba(230, 230, 230, 0.886);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.task-number,
+.name-task {
+  font-size: larger;
+  font-weight: 510;
+  color: #000000;
+}
+.name-task::first-letter {
+  color: #9e3abf;
+  font-weight: 550;
+  letter-spacing: -1px;
+}
+.task-number {
+  background: linear-gradient(
+    to top right,
+    #ff7e5f,
+    #9a3aba
+  ); /* You can customize the gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  padding-right: 10px;
+}
+.bottom-title-card {
+  width: 100%;
+  height: 15%;
+  background-color: rgba(230, 230, 230, 0.886);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-box-title {
+  padding-left: 10px;
+  font-size: larger;
+  font-weight: 500;
+  color: #000000;
+}
+.cart-task-btn {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #a10cd3;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  padding: 7px;
+  width: 90px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.cart-task-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.cart-task-btn span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+.cart-task-btn:hover span {
+  padding-right: 15px;
+}
+
+.cart-task-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* End of Task Row Container */
+
+/* Start of Show Task Status */
+
+.show-task-status-container {
+  min-height: 75vh;
+  width: 90%;
+  margin: 25px auto;
+  padding-bottom: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #efefefe8;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.for-gradient-font {
+  background-color: #000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: larger;
+  font-weight: 500;
+  text-align: left;
+}
+.status-title-preview {
+  font-size: x-large;
+}
+.status-col {
+  border-radius: 10px;
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: left;
+  padding-left: 15px;
+}
+.status-col-1 {
+  justify-content: center;
+  gap: 50px;
+  margin: -40px 0 0 0;
+  padding: 0px 0px 0px 15px;
+  width: 35%;
+}
+.status-col-2 {
+  justify-content: space-evenly;
+  padding: 0px;
+  max-width: 450px;
+}
+.status-col-1-completed {
+  width: 50%;
+}
+.status-col-2-completed {
+  width: 50%;
+}
+.status-col-3 {
+  padding: 0px;
+  width: fit-content;
+}
+
+.status-task-id {
+  display: flex;
+  flex-direction: row;
+  clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+  padding: 5px 15px 5px 15px;
+  margin-left: -15px;
+  width: 15ch;
+  background-color: #c6c6c6;
+}
+.task-id,
+.task-id-number {
+  font-size: larger;
+  font-weight: 550;
+  color: #000000;
+}
+.task-id-number {
+  padding-left: 5px;
+  background: linear-gradient(to top, #ff7e5f, #9a00cd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.status-task-title {
+  text-align: left;
+}
+.task-title-name-status,
+.task-des-name {
+  padding-left: 10px;
+  font-family: "Kumbh Sans", sans-serif !important;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: #6f6f6f;
+}
+.task-des-name {
+  height: fit-content;
+  text-indent: 15px;
+  font-size: 17px;
+  line-height: 20px;
+}
+.status-task-dates {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.status-target-date input,
+.status-deadline-date input {
+  width: 80%;
+  padding: 5px;
+  font-family: "Kumbh Sans", sans-serif !important;
+  font-size: medium;
+  font-weight: 500;
+  color: #686868;
+  border-radius: 5px;
+  border: 2px solid #b847edd9;
+  outline: none;
+}
+
+.preview {
+  width: 30%;
+}
+.task-preview-img-container {
+  min-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+}
+.task-preview-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.status-task-btns {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.row-3-col-1-btn {
+  height: 10%;
+}
+.row-3-col-2-btn {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.status-feedback-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.feedback-textarea {
+  width: 100%;
+  min-height: 100px;
+  font-family: "Kumbh Sans", sans-serif !important;
+  font-size: medium;
+  font-weight: 500;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 2px solid #b007ffdd;
+  color: rgb(0, 0, 0);
+  overflow: hidden;
+}
+.submit-feedback-btn {
+  margin-top: 20px;
+  padding: 0px 10px;
+  min-width: 10ch;
+  font-weight: 500;
+  height: 40px;
+  background-color: #9747ff;
+  clip-path: polygon(0 0, 100% 1%, 100% 73%, 89% 100%, 0 98%, 0 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 500;
+  border-width: 1px;
+  border-color: #bc50c6;
+}
+
+.status-cross-symbol {
+  position: relative;
+  top: 15px;
+  right: -90px;
+  max-height: 25px;
+  object-fit: contain;
+  padding: 5px 0px;
+}
+.status-cross-symbol:hover {
+  border-radius: 10px;
+  transition: all 0.1s ease-in-out;
+  background-color: #ffffffdc;
+  cursor: pointer;
+}
+.completed-status-cross-symbol {
+  position: relative;
+  top: 15px;
+  right: -180px;
+  max-height: 25px;
+  object-fit: contain;
+  padding: 5px 0px;
+}
+.completed-status-cross-symbol {
+  position: relative;
+  top: 5px;
+  right: 15px;
+  max-height: 25px;
+  object-fit: contain;
+  padding: 5px 5px;
+}
+.completed-status-cross-symbol:hover {
+  border-radius: 5px;
+  transition: all 0.1s ease-in-out;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/* Status Button */
+.custom-button {
+  margin: 25px;
+  position: relative;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: "Kumbh Sans", sans-serif !important;
+  isolation: isolate;
+}
+.custom-button-disable {
+  position: relative;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: not-allowed;
+  opacity: 0.8;
+  overflow: hidden;
+  font-family: "Kumbh Sans", sans-serif !important;
+  isolation: isolate;
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 450;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+.button-text {
+  text-align: center;
+  max-width: 10ch;
+}
+.button-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #6366f1 100%);
+  transition: all 0.3s ease;
+}
+.button-background-2 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #e54646 0%, #ed3a3a 50%, #f16363 100%);
+  transition: all 0.3s ease;
+}
+
+.button-icon {
+  display: inline-flex;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Hover effects */
+.custom-button:hover .button-content {
+  transform: translateY(-1px);
+}
+.custom-button:hover .button-background {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Active effects */
+.custom-button:active .button-content {
+  transform: translateY(1px);
+}
+
+.custom-button:active .button-background {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
+
+/* Focus styles */
+.custom-button:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Add subtle shadow */
+.custom-button {
+  box-shadow: 0 2px 4px rgba(79, 70, 229, 0.1), 0 4px 8px rgba(79, 70, 229, 0.1),
+    0 -1px 2px rgba(79, 70, 229, 0.05);
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+  box-shadow: 0 4px 8px rgba(79, 70, 229, 0.2),
+    0 8px 16px rgba(79, 70, 229, 0.2), 0 -2px 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Optional: Add a subtle shine effect */
+@keyframes shine {
+  from {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  to {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.custom-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%) rotate(45deg);
+  z-index: 1;
+}
+
+.custom-button:hover::after {
+  animation: shine 1s ease;
+}
+
+.disable-button {
+  cursor: not-allowed;
+}
+/* Status Button */
+
+/* End of Show Task Status */
+
+/* Start of Yet to launch and approved */
+.task-approved-row {
+  width: 100%;
+  min-height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.approve-title {
+  width: 98%;
+  padding: 10px 0 10px 25px;
+  text-align: left;
+  font-size: larger;
+  font-weight: 550;
+}
+.task-approved-row-container {
+  max-width: 93%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+.task-approved-row-container::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.yet-task-box-wrapper {
+  /* padding: 15px; */
+  /* scroll-snap-align: start; */
+  background-color: #4e46e500;
+  border-radius: 10px;
+  margin: 20px;
+  transition: all 0.3s ease-in-out;
+  /* box-shadow: rgba(0, 0, 0, 0.45) 10px 10px 15px -10px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  /* background-color: #ffffff; */
+}
+.yet-task-box {
+  /* padding: 15px; */
+  clip-path: polygon(
+    30px 0%,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 0px) 100%,
+    0 100%,
+    0% 30px
+  );
+  overflow-x: auto;
+  display: grid;
+  grid-template-columns: auto;
+  flex: none;
+  transition: all 0.3s ease-in-out;
+  min-width: 250px;
+  height: 250px;
+  background-image: url("https://i.ibb.co/gMXnzp7y/123.png");
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.yet-task-box:hover {
+  /* background-image: url("https://i.ibb.co/qLkbXNdP/632.png"); */
+  background-image: url("https://i.ibb.co/mrt28Dh0/453.png");
+
+  transition: all 0.3s ease-in-out;
+}
+
+.yet-task-box-wrapper:hover {
+  scale: 1.05;
+  transition: all 0.3s ease-in-out;
+}
+
+.inner-triangle-container {
+  /* clip-path: polygon(100% 100%, 0% 100%, 100% 0); */
+  clip-path: polygon(0 11%, 0 0, 100% 0, 100% 100%, 0 100%, 85% 11%);
+  background-color: #ffffff88;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: end;
+  height: 100%;
+  width: auto;
+}
+.yet-task-id {
+  min-height: 50%;
+  font-size: x-large;
+  font-weight: 550;
+  color: #000000;
+  padding-right: 5px;
+}
+.yet-id,
+.yet-title {
+  width: 100%;
+  text-align: right;
+  /* line-height: 33px; */
+}
+
+.yet-id {
+  background: linear-gradient(
+    to top right,
+    #ff4314 10%,
+    #c518ff 80%
+  ); /* You can customize the gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.yet-title::first-letter {
+  color: #9e3abf;
+  font-weight: 550;
+  letter-spacing: -4px;
+}
+
+.yet-task-title {
+  width: 90%;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  text-align: left;
+  padding-bottom: 5px;
+  background: linear-gradient(
+    to top,
+    #000000 10%,
+    #b82de6 50%
+  ); /* You can customize the gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+/* From Uiverse.io by cssbuttons-io */
+.yet-preview-btn {
+  background-color: #9747ff;
+  padding: 5px 10px 5px 10px;
+  --color: #ffffff;
+  font-family: "Kumbh Sans", sans-serif !important;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1.5px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+}
+
+.yet-preview-btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #f08143;
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.yet-preview-btn:hover {
+  color: #fff;
+}
+
+.yet-preview-btn:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.3s;
+}
+
+.yet-preview-btn:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.yet-preview-btn:active:before {
+  background: #560bad;
+}
+
+/* End of Yet to launch and approved */

@@ -1,0 +1,533 @@
+.business-page {
+  margin-top: 70px;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   font-family: "Kumbh Sans", sans-serif !important;
+}
+/* Start of Business Front Detail Section */
+.service-starting-container {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  flex-direction: row;
+  background-size: cover;
+  align-items: center;
+}
+.service-illu-section {
+  animation-delay: 3s;
+  min-width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transform: scaleX(-1); */
+  border-radius: 50px 0px 0px 0px;
+  background-image: url("../Assets/svg/Blog-img-1.svg");
+  background-repeat: no-repeat;
+  background-size: 85%;
+  background-position: center;
+}
+
+.service-company-motive-slogan-section {
+  /* padding-left: 50px; */
+  min-width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.service-slogan {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 45px;
+}
+
+.service-slogan-part {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: left;
+  text-align: left;
+  gap: 10px; /* Add spacing between elements */
+}
+
+.service-slogan-word {
+  display: inline-block;
+  white-space: nowrap; /* This keeps the word together */
+}
+
+.service-slogan-text {
+  margin: 0 2px;
+}
+
+.service-slogan-1 {
+  font-size: 45px;
+  font-weight: 600;
+  color: #9955f2e9;
+  margin-top: -5px;
+  margin-right: 0px;
+}
+
+.service-slogan-2 {
+  font-size: 45px;
+  font-weight: 600;
+  color: #f08143;
+  margin-left: 0px;
+  margin-top: -4px;
+}
+
+.service-underline {
+  height: 5px;
+  overflow: hidden;
+  margin: 0;
+  width: 60%;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+.service-des {
+  line-height: 28px;
+  width: 85%;
+  color: #3d3d3d;
+  text-align: justify;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 1000px) {
+  .service-starting-container {
+    flex-direction: column-reverse;
+    height: fit-content;
+    margin-bottom: 20px;
+  }
+  .service-illu-section {
+    min-width: 100%;
+    height: 500px;
+  }
+  .service-company-motive-slogan-section {
+    padding-left: 0px;
+    margin-top: 20px;
+    max-height: fit-content;
+    align-items: center;
+    max-width: 100%;
+    padding: 0;
+  }
+  .service-slogan {
+    text-align: left !important;
+    justify-content: center;
+    width: fit-content;
+    padding-left: 0px;
+  }
+  .service-slogan-part {
+    min-width: 100%;
+    justify-content: left;
+    text-align: left;
+  }
+  .service-underline {
+    max-width: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .service-slogan-part {
+    min-width: 2ch;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* End of Business Front Detail Section */
+
+/* Start of Business Content Section */
+.bus-blog-card-back {
+  /* margin-top: 50px; */
+  background: rgb(240, 129, 67);
+  background: linear-gradient(
+    180deg,
+    rgba(240, 129, 67, 1) 2%,
+    rgba(158, 75, 241, 1) 43%,
+    rgba(151, 71, 255, 1) 52%,
+    rgba(255, 255, 255, 1) 52%
+  );
+  height: 550px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.bus-blog-card {
+  height: 500px;
+  width: 30%;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1200px) {
+  .service-illu-section{
+    height: 350px;
+  }
+  .service-des{
+    width: 90%;
+    text-align: center;
+    font-weight: 430;
+  }
+  .bus-blog-card-back {
+    background: rgb(240, 129, 67);
+    background: linear-gradient(
+      270deg,
+      rgba(240, 129, 67, 1) 7%,
+      rgba(162, 78, 232, 1) 34%,
+      rgba(158, 75, 241, 1) 55%,
+      rgba(255, 255, 255, 1) 35%
+    );
+    min-height: 1600px;
+    flex-direction: column;
+    margin-top: 0px;
+  }
+  .blog-slogan {
+    width: 100%;
+  }
+  .blog-text-box {
+    width: 95%;
+  }
+  .blog-line-1,
+  .blog-line-2,
+  .blog-line-3 {
+    width: 100%;
+    line-height: 65px;
+    height: max-content;
+  }
+  .img-detail {
+    width: 100%;
+  }
+  .bus-blog-card {
+    width: 90%;
+    min-height: fit-content;
+    margin: 10px;
+  }
+  .blog-detail {
+    width: 100%;
+  }
+  .blog-detail p {
+    max-width: 90%;
+    margin-bottom: 10px;
+  }
+  .bus-card-img {
+    width: 100%;
+  }
+  .card-img {
+    width: 100%;
+  }
+  .static-card-title {
+    line-height: 5px;
+  }
+
+}
+
+.bus-blog-card:hover .bus-card-img {
+  transition: all 1s ease-in-out;
+  transform: translateY(12%);
+  filter: grayscale(100%);
+}
+
+.bus-card-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+.card-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-img img {
+  width: 90%;
+  border-radius: 15px;
+  height: 400px;
+  object-fit: cover;
+}
+.bus-blog-card:hover .card-img img {
+  height: 400px;
+}
+
+.card-img p {
+  opacity: 0;
+  visibility: auto;
+  height: fit-content;
+  bottom: -100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.66);
+  font-size: medium;
+  font-weight: 450;
+  transition: all 0s ease-out;
+}
+
+.bus-blog-card:hover .card-img p {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s ease-out;
+  height: fit-content;
+  bottom: 0;
+  display: flex;
+  width: 90%;
+}
+
+.static-card-title {
+  margin-top: 10px;
+  line-height: 30px;
+  width: 90%;
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.bus-blog-card:hover .static-card-title {
+  line-height: 30px;
+  transition: all 1s ease-in-out;
+  transform: translateY(-420px);
+  background: #f08143;
+  background: linear-gradient(to right, #f08143 26%, #9747ff 58%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* End of Business Content Section */
+
+/*  Start of Package and pricing */
+
+.package-pricing {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.b-package-title {
+  width: 95%;
+  text-align: left;
+  font-size: 37px;
+  background: linear-gradient(to bottom right, #ff7b2f 0%, #8731f7 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 500;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+.package-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+.cat-tag {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.cat-label {
+  width: 70%;
+  height: 100%;
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.l-1 {
+  /* background-image: url("../Assets/Business-page/Icn/basic.png"); */
+  background-image: url("../Assets/Business-page/Icn/label-1.png");
+}
+.l-2 {
+  background-image: url("../Assets/Business-page/Icn/label-2\ copy\ 2.png");
+}
+.l-3 {
+  background-image: url("../Assets/Business-page/Icn/label-3.jpg");
+}
+.cat-icn {
+  width: 70%;
+  height: 70%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.i-1 {
+  background-image: url("../Assets/Business-page/Icn/pricing-icon-1.png.png");
+}
+.i-2 {
+  background-image: url("../Assets/Business-page/Icn/pricing-icon-2.png.png");
+}
+.i-3 {
+  background-image: url("../Assets/Business-page/Icn/pricing-icon-3.png.png ");
+}
+.price-title {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.price-title h2 {
+  padding: 0%;
+  margin: 0%;
+  text-decoration: underline #0000003c 1.5px;
+  text-underline-offset: 10px;
+  text-shadow: #9747ff 0px 1px 10px 0px, #f08243 0px 1px 3px 2px;
+  font-size: 45px;
+  text-align: left;
+  margin-left: 25px;
+  background: #f08143;
+  background: linear-gradient(to top, #f08143 30%, #9747ff 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.price-title h5 {
+  padding: 0%;
+  margin: 0%;
+  font-size: large;
+  color: rgba(128, 128, 128, 0.795);
+}
+.price-card-1,
+.price-card-2,
+.price-card-3 {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  width: 30%;
+  border-radius: 15px;
+  height: fit-content;
+  background-color: white;
+  overflow: hidden;
+}
+
+.price-card-1::before,
+.price-card-2::before,
+.price-card-3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: 13px;
+  background: linear-gradient(to bottom, #f08243be 0%, #9747ffbe 100%);
+  -webkit-mask: linear-gradient(white, white) content-box,
+    linear-gradient(white, white);
+  mask-composite: exclude;
+}
+.price-card-1:hover {
+  box-shadow: #f08243 0px 1px 10px 0px, #9747ff 0px 1px 3px 2px;
+}
+.price-card-2:hover {
+  box-shadow: #f08243 0px 1px 10px 0px, #9747ff 0px 1px 3px 2px;
+}
+.price-card-3:hover {
+  box-shadow: #f08243 0px 1px 10px 0px, #9747ff 0px 1px 3px 2px;
+}
+
+.consultation,
+.staffing,
+.digital-marketing {
+  font-size: xx-large;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 25px;
+}
+.package-cards ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.package-cards ul li {
+  margin-bottom: 5px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  text-align: left;
+  font-size: large;
+  font-weight: 500;
+}
+.tick-icn {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.t-1 {
+  background-image: url("../Assets/Business-page/Icn/tick-1.png");
+}
+.t-2 {
+  background-image: url("../Assets/Business-page/Icn/tick-1.png");
+}
+.t-3 {
+  background-image: url("../Assets/Business-page/Icn/tick-1.png");
+}
+.tick-icn-e {
+  width: 20px;
+  height: 20px;
+}
+@media screen and (max-width: 1170px) {
+  .package-pricing {
+    min-height: fit-content;
+  }
+  .b-package-title {
+    margin-top: 30px;
+    width: 90%;
+  }
+  .package-cards {
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .price-card-1,
+  .price-card-2,
+  .price-card-3 {
+    min-width: 90%;
+  }
+  .tick-icn,
+  .tick-icn-e {
+    min-width: 22px;
+    min-height: 22px;
+  }
+}
+/* End of Package and pricing  */

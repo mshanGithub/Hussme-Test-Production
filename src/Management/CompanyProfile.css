@@ -1,0 +1,267 @@
+@media screen and (max-width: 800px) {
+    .company-info-section{
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+    .edit-form-input-container{
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+}
+@media screen and (max-width: 450px) {
+    .company-info-section{
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+    .edit-form-input-container{
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+    .company-logo-section {
+        flex-direction: column !important;
+    }
+}
+
+.company-profile-page {
+  width: 100%;
+  min-height: fit-content;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  font-family: "Kumbh Sans", sans-serif !important;
+}
+.edit-form-input-container {
+  width: 100%;
+}
+.profile-header {
+  margin-top: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: fit-content;
+  margin-bottom: 10px;
+  width: 98%;
+}
+.profile-header h1 {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.edit-toggle-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 450;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.edit-toggle-button.edit-mode {
+  background-color: #9747ff;
+  color: white;
+}
+
+.edit-toggle-button.save-mode {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* View Mode Styling */
+.company-details-view {
+  display: flex;
+  width: 94%;
+  min-height: 100vh;
+  flex-direction: column !important;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.company-logo-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-logo {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 8px;
+  object-fit: contain;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.company-info-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 35px;
+  /* gap: 25px; */
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: start;
+}
+
+.info-group h3 {
+  text-align: left;
+  color: #9747ffe5;
+  margin: 0;
+  padding: 0;
+  font-size: 19px;
+  font-weight: 450;
+}
+
+.info-group p {
+  text-align: left;
+  margin: 0;
+  padding-top: 3px;
+  color: #333;
+  font-size: 17px;
+  font-weight: 450;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+/* Edit Mode Styling */
+.company-details-edit {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.edit-company-form {
+  padding: 0;
+}
+.edit-form-input-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.edit-logo {
+  /* align-items: start !important; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.logo-upload {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.logo-label {
+  font-weight: 450;
+  margin-bottom: 0.5rem;
+  color: #9747ff;
+}
+
+.logo-input {
+  padding: 0 0 5px 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.profile-logo-preview {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  object-fit: contain;
+  margin-top: 1rem;
+  background-color: #f9f9f9;
+  padding: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  /* margin-bottom: 1rem; */
+}
+.form-group input {
+  width: 90%;
+}
+
+.form-group label {
+  font-weight: 450;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.edit-color-input {
+  min-height: 40px;
+  width: 100px;
+  padding: 0px !important;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.save-button {
+  padding: 15px;
+  background-color: #9747ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 300;
+  /* line-height: 15px; */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #8035e0;
+}
+
+.save-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+input.error,
+textarea.error {
+  border: 1px solid #ff3860;
+  background-color: #ffeded;
+}
+
+.error-message {
+  color: #ff3860;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}

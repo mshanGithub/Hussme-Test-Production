@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+* {
+     font-family: "Kumbh Sans", sans-serif !important;
+  box-sizing: border-box; /* optional, but good for layout consistency */
+}
+body {
+  /* min-width: 100%; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family:"M PLUS Rounded 1c", serif; */
+  font-style: normal;
+  outline: none;
+  
+}

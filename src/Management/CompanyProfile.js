@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useUser } from "../Components/Context/UserContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../Management/CompanyProfile.css";
 
 export function CompanyProfile() {
+  const { user, logout } = useUser();
   const navigate = useNavigate();
   const [showLogout, setShowLogout] = useState(false);
   const [companyProfile, setCompanyProfile] = useState(null);
@@ -41,8 +43,22 @@ export function CompanyProfile() {
 
   const [formErrors, setFormErrors] = useState({});
 
+  // Function to toggle the logout dropdown
+  const toggleLogout = () => setShowLogout(!showLogout);
 
- 
+  // Function to handle logout
+  const handleLogout = (e) => {
+    e.preventDefault();
+    logout();
+    setShowLogout(false);
+  };
+
+  // Function to navigate to change password page
+  const handleChangePassword = (e) => {
+    e.preventDefault();
+    setShowLogout(false);
+    navigate("/reset-password");
+  };
 
   // Fetch company profile data
   useEffect(() => {
@@ -240,19 +256,7 @@ export function CompanyProfile() {
   const toggleEditMode = () => {
     setEditMode(!editMode);
     // Reset any form errors when toggling edit mode
-  };
-
-  // Helper function to get proper image URL
-  const getImageUrl = (logoPath) => {
-    if (!logoPath) return "https://i.ibb.co/4wrxz3pC/image-upload-icon.png";
-
-    // If it's a full URL already (like a base64 string), return as is
-    if (logoPath.startsWith("data:image")) return logoPath;
-
-    // Otherwise, prepend the server URLreturn `${process.env.REACT_APP_API_URL}${logoPath}`;return process.env.REACT_APP_API_URL + `${logoPath}`;
-    // Remove /api from the URL when constructing image path since logo paths already include the correct structure
-    const baseUrl = process.env.REACT_APP_API_URL.replace("/api", "");
-    return baseUrl + logoPath;
+    setFormErrors({});
   };
 
   // If still loading, show a loading message
@@ -287,7 +291,8 @@ export function CompanyProfile() {
           <div className="company-details-view">
             <div className="company-info-section">
               <img
-                src={getImageUrl(companyProfile.logo)}
+                src={companyProfile.logo}
+                // src={getImageUrl(companyProfile.logo)}
                 alt={companyProfile.companyName}
                 className="profile-logo"
               />
@@ -427,7 +432,7 @@ export function CompanyProfile() {
                   className="profile-logo-preview"
                 />
               </div>
-              
+
               <div className="edit-form-input-container">
                 <div className="form-group">
                   <label htmlFor="cmpy-name">Company Name</label>

@@ -89,7 +89,7 @@ export function Login() {
     }
 
     try {
-      const response = await fetch(process.env.REACT_APP_API_URL +"/auth", {
+      const response = await fetch(process.env.REACT_APP_API_URL + "/auth", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -101,15 +101,18 @@ export function Login() {
       if (response.ok) {
         login(result.Token);
         toast.success("Login Successful!");
-        
+
         // Check if user has a company profile
         try {
-          const profileResponse = await fetch(process.env.REACT_APP_API_URL +"/company/get-company-profile", {
-            headers: {
-              'Authorization': `Bearer ${result.Token}`
+          const profileResponse = await fetch(
+            process.env.REACT_APP_API_URL + "/company/get-company-profile",
+            {
+              headers: {
+                Authorization: `Bearer ${result.Token}`,
+              },
             }
-          });
-          
+          );
+
           // If profile exists, redirect to management page
           if (profileResponse.ok) {
             setTimeout(() => {

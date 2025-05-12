@@ -13,7 +13,7 @@
   .mgmt-sidebar {
     min-width: 100%;
     max-height: 100% !important;
-    top: 90% !important;
+    top: 93% !important;
     bottom: auto !important;
   }
 
@@ -22,7 +22,7 @@
     min-width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-evenly !important;
   }
   .mgmt-sidebar ul li {
     margin: 0 !important;
@@ -67,6 +67,7 @@
   .mgmt-sidebar li:active {
     background-color: #ffffff;
     color: #000;
+    /* margin-left: 150px !important; */
   }
   .mgmt-sidebar-icn {
     margin-bottom: 5px;
@@ -77,7 +78,7 @@
     font-size: 15px;
     font-weight: 400;
     line-height: 15px;
-    min-width: max-content;
+    min-width: min-content;
     background-color: rgba(0, 0, 0, 0.253);
     color: #fff;
     text-align: center;
@@ -85,27 +86,55 @@
     padding: 5px;
     position: absolute;
     z-index: 1;
-    top: 120%;
+    max-width: 15ch;
+    left: 180% !important;
   }
   .mgmt-sidebar ul li:hover .mgmt-tooltiptext {
     visibility: visible;
   }
 }
-@media screen and (max-width: 500px) {
-  .mgmt-sidebar {
-    top: 89% !important;
+
+@media screen and (max-width: 710px) {
+  .mgmt-sidebar ul {
+    justify-content: space-between !important;
   }
   .mgmt-tooltiptext {
-    padding: 0;
-    min-width: 8ch;
-    background-color: #00000000;
+    max-width: 15ch;
+    right: 0% !important;
+  }
+  .for-mble {
+    left: -450% !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .mgmt-sidebar {
+    top: 92% !important;
+  }
+  .mgmt-sidebar ul {
+    margin-top: 0 !important;
+    justify-content: space-between !important;
+  }
+  .mgmt-tooltiptext {
+    padding: 2px 5px !important;
+    left: 150% !important;
+    border-radius: 4px !important;
+    font-weight: 400;
+    margin-top: 250% !important;
+    /* background-color: transparent !important; */
+    left: -40% !important;
+    max-width: 25ch !important;
+    min-width: max-content !important;
   }
   .center-company-name {
     font-size: larger !important;
     font-weight: 500 !important;
-    
+  }
+  .for-mble {
+    left: -380% !important;
   }
 }
+
 .mgmt-page {
   width: 100%;
   min-height: 100vh;
@@ -151,6 +180,8 @@
   color: white;
 }
 .center-company-name {
+  position: relative;
+  left: 5%;
   width: fit-content;
   color: rgb(255, 255, 255);
   font-size: 25px;

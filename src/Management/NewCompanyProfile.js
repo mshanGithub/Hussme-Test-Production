@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import "../Management/NewCompanyProfile.css";
 import React, { useState } from "react";
+// import { useUser } from "../Components/Context/UserContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
 export function NewCompanyProfile() {
+  // const { user } = useUser();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -74,10 +76,10 @@ export function NewCompanyProfile() {
     const file = event.target.files[0];
     if (!file) return;
 
-    setLogoFile(file);
+    setLogoFile(file); // Save the file for submission
     const reader = new FileReader();
     reader.onloadend = () => {
-      setPreview(reader.result);
+      setPreview(reader.result); // Show a preview of the image
     };
     reader.readAsDataURL(file);
 
@@ -85,6 +87,7 @@ export function NewCompanyProfile() {
       const ext = file.name.split(".").pop();
       const newFileName = `company-logo.${ext}`;
 
+      // Get a pre-signed upload URL from the server
       const res = await axios.get(
         `${process.env.REACT_APP_API_URL}/get-upload-url`,
         {
@@ -95,6 +98,7 @@ export function NewCompanyProfile() {
       const uploadUrl = res.data.url;
       const imageUrlOnly = uploadUrl.split("?")[0];
 
+      // Upload the file to Azure Blob Storage
       await axios.put(uploadUrl, file, {
         headers: {
           "x-ms-blob-type": "BlockBlob",
@@ -163,19 +167,48 @@ export function NewCompanyProfile() {
         return;
       }
 
-      // Make sure the logoUrl from the uploaded image is included in the submission
-      const dataToSubmit = {
-        ...formData,
-        logo: formData.logoUrl, // Make sure to include the logo URL with the appropriate field name expected by your backend
-      };
+      // Prepare form data
+      const formDataToSubmit = new FormData();
+      formDataToSubmit.append("companyName", formData.companyName);
+      formDataToSubmit.append("dba", formData.dba);
+      formDataToSubmit.append("fedraltaxid", formData.fedraltaxid);
+      formDataToSubmit.append("industry", formData.industry);
+      formDataToSubmit.append("email", formData.email);
+      formDataToSubmit.append("phone", formData.phone);
+      formDataToSubmit.append("website", formData.website);
+      formDataToSubmit.append("address1", formData.address1);
+      formDataToSubmit.append("address2", formData.address2);
+      formDataToSubmit.append("city", formData.city);
+      formDataToSubmit.append("zip", formData.zip);
+      formDataToSubmit.append("state", formData.state);
+      formDataToSubmit.append("country", formData.country);
+      formDataToSubmit.append("linkedin", formData.linkedin);
+      formDataToSubmit.append("facebook", formData.facebook);
+      formDataToSubmit.append("insta", formData.insta);
+      formDataToSubmit.append("x", formData.x);
+      formDataToSubmit.append("youtube", formData.youtube);
+      formDataToSubmit.append("fontfamily", formData.fontfamily);
+      formDataToSubmit.append("color1", formData.color1);
+      formDataToSubmit.append("color2", formData.color2);
+      formDataToSubmit.append("color3", formData.color3);
 
+      // Add logo to the form data
+      if (logoFile) {
+        // If a file is uploaded, append it to the form data
+        formDataToSubmit.append("logo", logoFile);
+      } else if (formData.logoUrl) {
+        // If a logo URL is provided, append it as a string
+        formDataToSubmit.append("logoUrl", formData.logoUrl);
+      }
+
+      // Send the request to the server
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/company/update-company-profile`,
-        dataToSubmit,
+        formDataToSubmit,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data", // Important for file uploads
           },
         }
       );

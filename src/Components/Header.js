@@ -97,24 +97,8 @@ export function Header() {
                 ) : (
                   <>
                     <Link className="login-name" to="/login">
-                      <div
-                        aria-label="User Login Button"
-                        tabindex="0"
-                        role="button"
-                        className="user-profile-1"
-                      >
-                        <div className="user-profile-inner">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                          >
-                            <g data-name="Layer 2" id="Layer_2">
-                              <path d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"></path>
-                            </g>
-                          </svg>
-                          <p>Log In</p>
-                        </div>
+                      <div className="user-profile-1">
+                        <p>Login</p>
                       </div>
                     </Link>
                   </>
@@ -145,12 +129,8 @@ export function Header() {
               <Link to="/management" className="logo-link">
                 Management
               </Link>
-            </li>{" "}
-            <li className="hideWhileMobileOn">
-              <Link to="/new-company" className="logo-link">
-                New Company
-              </Link>
             </li>
+           
             <li className="hideWhileMobileOn">
               <Link to="/blog" className="logo-link">
                 Blog
@@ -161,7 +141,7 @@ export function Header() {
                 Contact US
               </Link>
             </li>
-            <li className="hideWhileMobileOn">
+            {/* <li className="hideWhileMobileOn">
               {user ? (
                 <div
                   className="user-dropdown-container"
@@ -208,6 +188,37 @@ export function Header() {
                     </div>
                   </Link>
                 </>
+              )}
+            </li> */}
+            <li className="hideWhileMobileOn">
+              {user ? (
+                <div
+                  className="user-dropdown-container"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <span className="desk-username" onClick={toggleLogout}>
+                    {user.username}
+                  </span>
+                  {showLogout && (
+                    <div className="logout-dropdown">
+                      <Link
+                        className="change-password-button"
+                        onClick={handleChangePassword}
+                      >
+                        Change Password
+                      </Link>
+                      <Link className="logout-button" onClick={handleLogout}>
+                        Logout
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link className="login-name" to="/login">
+                  <div className="user-profile-1">
+                    <p>Login</p>
+                  </div>
+                </Link>
               )}
             </li>
             <li className="menu-button" onClick={showSidebar}>

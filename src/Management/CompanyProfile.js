@@ -259,19 +259,6 @@ export function CompanyProfile() {
     setFormErrors({});
   };
 
-  // Helper function to get proper image URL
-  const getImageUrl = (logoPath) => {
-    if (!logoPath) return "https://i.ibb.co/4wrxz3pC/image-upload-icon.png";
-
-    // If it's a full URL already (like a base64 string), return as is
-    if (logoPath.startsWith("data:image")) return logoPath;
-
-    // Otherwise, prepend the server URLreturn `${process.env.REACT_APP_API_URL}${logoPath}`;return process.env.REACT_APP_API_URL + `${logoPath}`;
-    // Remove /api from the URL when constructing image path since logo paths already include the correct structure
-    const baseUrl = process.env.REACT_APP_API_URL.replace("/api", "");
-    return baseUrl + logoPath;
-  };
-
   // If still loading, show a loading message
   if (loading) {
     return (
@@ -304,7 +291,8 @@ export function CompanyProfile() {
           <div className="company-details-view">
             <div className="company-info-section">
               <img
-                src={getImageUrl(companyProfile.logo)}
+                src={companyProfile.logo}
+                // src={getImageUrl(companyProfile.logo)}
                 alt={companyProfile.companyName}
                 className="profile-logo"
               />
@@ -444,7 +432,7 @@ export function CompanyProfile() {
                   className="profile-logo-preview"
                 />
               </div>
-              
+
               <div className="edit-form-input-container">
                 <div className="form-group">
                   <label htmlFor="cmpy-name">Company Name</label>

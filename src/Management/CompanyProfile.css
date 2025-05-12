@@ -1,23 +1,44 @@
 @media screen and (max-width: 800px) {
-    .company-info-section{
-        grid-template-columns: repeat(2,1fr) !important;
-    }
-    .edit-form-input-container{
-        grid-template-columns: repeat(2,1fr) !important;
-    }
+  .profile-management-content{
+    margin-bottom: 15% ;
+  }
+  .company-info-section {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .edit-form-input-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  .edit-form-input-container {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
 }
 @media screen and (max-width: 450px) {
-    .company-info-section{
-        grid-template-columns: repeat(1,1fr) !important;
-    }
-    .edit-form-input-container{
-        grid-template-columns: repeat(1,1fr) !important;
-    }
-    .company-logo-section {
-        flex-direction: column !important;
-    }
+  .profile-management-content{
+    margin-bottom: 23% ;
+  }
+  .company-details-view{
+    max-width:85% !important ;
+  }
+  .company-info-section {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .edit-form-input-container {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .company-logo-section {
+    flex-direction: column !important;
+  }
 }
-
+.profile-management-content {
+  width: 100%;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .company-profile-page {
   width: 100%;
   min-height: fit-content;
@@ -40,7 +61,9 @@
   width: 98%;
 }
 .profile-header h1 {
-  padding-left: 20px;
+  font-size: 25px;
+  font-weight: 450;
+  padding-left: 5px;
   margin: 0;
 }
 
@@ -69,10 +92,10 @@
   width: 94%;
   min-height: 100vh;
   flex-direction: column !important;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(188, 85, 85); */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
+  /* padding: 2rem; */
   gap: 2rem;
 }
 
@@ -233,7 +256,7 @@
 }
 
 .save-button {
-  padding: 15px;
+  padding:  10px 10px;
   background-color: #9747ff;
   color: white;
   border: none;

@@ -151,7 +151,8 @@ export function Management() {
           >
             {companyProfile && companyProfile.logo ? (
               <img
-                src={getImageUrl(companyProfile.logo)}
+                src={companyProfile?.logo}
+                // src={getImageUrl(companyProfile.logo)}
                 alt="https://i.ibb.co/Tx7tzcQ6/freepicdownloader-com-square-p-letter-logo-medium.jpg"
                 className="company-logo"
                 title="Click for options"
@@ -223,7 +224,7 @@ export function Management() {
                     className="mgmt-sidebar-icn"
                   />
                   <span className="mgmt-sidebar-title">Process & Training</span>
-                  <span className="mgmt-tooltiptext">Process & Training</span>
+                  <span className="mgmt-tooltiptext">Process &Training</span>
                 </NavLink>
               </li>
               <li
@@ -249,7 +250,7 @@ export function Management() {
                     className="mgmt-sidebar-icn"
                   />
                   <span className="mgmt-sidebar-title">Company Profile</span>
-                  <span className="mgmt-tooltiptext">Company Profile</span>
+                  <span className="mgmt-tooltiptext for-mble">Company Profile</span>
                 </NavLink>
               </li>
             </ul>
